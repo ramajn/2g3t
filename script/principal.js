@@ -17,14 +17,42 @@ let b = " ";
 let op = " ";
 let valor = " ";
 let tem_ponto = false;
+
+function zerar(){
+    if(desligado) return;
+     a = "";
+     b = "";
+     op = "";
+     valor="";
+     tem_ponto = false;
+     mostra_resultado(0);
+}
+
+function desligado(){
+    if(desligada){
+        zerar()
+        desligada = false;
+     
+    }else{
+        zerar();
+        mostra_resultado("");
+        desligada = true;   
+    }
+    return desligada;
+
+
+}
+
 function mostra_resultado (resul){
     document.getElementById("resultado").value = resul;
 }
+
 function operacao (nova_op){
     op = nova_op;
     a = valor;
     valor = "";
 }
+
 function calcula (){
     if (op != ""){
         b = valor;
@@ -51,4 +79,3 @@ function digitando(tecla){
 valor = valor + tecla;
 mostra_resultado(valor);
 }
-
