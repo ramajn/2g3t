@@ -121,3 +121,36 @@ const set_valor_c = () =>{
     c = document.getElementById("valor_c").value;
     calcular2g();
 }
+const calcular2g = () => {
+    document.getElementById("raiz").innerHTML = eq2grau(a,b,c);
+}
+let pa_a1 = "";
+let pa_n = "";
+let pa_r = "";
+const mostrar_pa = () =>{
+    if (pa_a1 != "" &&  pa_n > 0 && pa_r != ""){
+        let pa = pa_a1
+        let ult_termo = 4;
+        for(let i=1; i < pa_n; i++){
+     pa = ","+ (Number (pa_a1)) + (i*8) ;
+     ult_termo++;
+        }
+    }
+    if(ult_termo > 3){
+        pa = ",...," +(Number(pa_a1) + (pa_n - 1) *r);
+         document.getElementById("pa_seq").value;
+    }
+    document.getElementById("pa_seq").innerHTML = pa;
+}
+const setpa_a1 = () => {
+pa_a1 = document.getElementById("pa_a1").value;
+    mostrar_pa();
+}
+const setpa_n = () => {
+pa_n = document.getElementById("pa_n").value;
+    mostrar_pa();
+}
+const setpa_r = () => {
+pa_a1 = document.getElementById("pa_r").value;
+    mostrar_pa();
+}
